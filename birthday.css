@@ -1,190 +1,443 @@
-.birthdays {
-    width: 90%;
-    max-width: 1120px;
-    margin: 50px auto;
-    padding: 35px;
+/* ========================================
+   RESET
+======================================== */
+
+* {
     box-sizing: border-box;
-
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid #9ed5e8;
-    border-radius: 20px;
-
-    box-shadow: 0 8px 20px rgba(31, 111, 159, 0.12);
 }
 
-
-/* HEADER */
-
-.birthday-header {
-    margin-bottom: 30px;
+html {
+    scroll-behavior: smooth;
 }
 
-.birthday-label {
-    display: inline-block;
-
-    padding: 6px 12px;
-
-    background: #dff3fa;
-    color: #1f6f9f;
-
-    border-radius: 20px;
-
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.birthday-header h2 {
-    margin: 12px 0 5px;
-
-    color: #1f6f9f;
-    font-size: 28px;
-}
-
-.birthday-header p {
+body {
     margin: 0;
 
-    color: #527080;
-    font-size: 15px;
-}
-
-
-/* BIRTHDAY GRID */
-
-.birthday-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 18px;
-}
-
-
-/* CARD */
-
-.birthday-card {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-
-    padding: 20px;
-
-    background: rgba(255, 255, 255, 0.9);
-
-    border: 1px solid #b5dce9;
-    border-radius: 16px;
-
-    box-shadow: 0 5px 15px rgba(31, 111, 159, 0.08);
-
-    transition: 0.3s;
-}
-
-.birthday-card:hover {
-    transform: translateY(-5px);
-
-    border-color: #6db7d2;
-
-    box-shadow: 0 10px 22px rgba(31, 111, 159, 0.18);
-}
-
-
-/* DATE BOX */
-
-.birthday-date {
-    width: 70px;
-    height: 75px;
-
-    flex-shrink: 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
 
     background: linear-gradient(
         135deg,
-        #dff3fa,
-        #b9e4f2
+        #ffffff 0%,
+        #e8f7fc 45%,
+        #b9e4f2 100%
     );
 
-    border: 1px solid #9ed5e8;
-    border-radius: 14px;
+    color: #1e3a4c;
+
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   BIRTHDAY SECTION
+======================================== */
+
+.birthdays {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 50px 30px 70px;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.birthday-header {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto 40px;
 
     text-align: center;
 }
 
-.birthday-month {
-    color: #3b91bd;
 
-    font-size: 12px;
-    font-weight: bold;
+/* Birthday label */
+
+.birthday-label {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    margin-bottom: 12px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid #9ed5e8;
+
+    border-radius: 20px;
+
+    color: #1f6f9f;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* Main title */
+
+.birthday-header h2 {
+    margin: 0 0 12px;
+
+    color: #1f6f9f;
+
+    font-size: clamp(32px, 5vw, 48px);
+
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+/* Description */
+
+.birthday-header p {
+    margin: 0 auto;
+
+    max-width: 650px;
+
+    color: #527080;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   BIRTHDAY GRID
+======================================== */
+
+.birthday-grid {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* ========================================
+   BIRTHDAY CARD
+======================================== */
+
+.birthday-card {
+    width: 100%;
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border: 1px solid #9ed5e8;
+
+    border-top: 5px solid #58a9c9;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 20px rgba(31, 111, 159, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* ========================================
+   DATE BOX
+======================================== */
+
+.birthday-date {
+    width: 75px;
+
+    min-width: 75px;
+
+    height: 85px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e8f7fc;
+
+    border: 1px solid #b5dce9;
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+
+/* Month */
+
+.birthday-month {
+    color: #1f6f9f;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
     letter-spacing: 1px;
 }
 
-.birthday-date strong {
-    color: #1f6f9f;
 
-    font-size: 28px;
+/* Day */
+
+.birthday-date strong {
+    color: #23495c;
+
+    font-size: 32px;
+
     line-height: 1;
 }
 
 
-/* INFO */
+/* ========================================
+   BIRTHDAY INFORMATION
+======================================== */
 
 .birthday-info {
+    min-width: 0;
+
     flex: 1;
 }
 
-.birthday-info h3 {
-    margin: 0 0 6px;
 
-    color: #24566e;
+/* Student name */
+
+.birthday-info h3 {
+    margin: 0 0 8px;
+
+    color: #23495c;
 
     font-size: 18px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    overflow-wrap: anywhere;
 }
 
+
+/* Birthday date */
+
 .birthday-info p {
-    margin: 0 0 6px;
+    margin: 0 0 8px;
 
     color: #527080;
 
-    font-size: 13px;
+    font-size: 14px;
+
+    line-height: 1.4;
 }
+
+
+/* Birthday message */
 
 .birthday-info span {
     color: #6b8794;
 
-    font-size: 12px;
+    font-size: 13px;
+
+    line-height: 1.4;
 }
 
 
-/* MOBILE */
+/* ========================================
+   HOVER
+======================================== */
+
+.birthday-card:hover {
+    transform: translateY(-6px);
+
+    background: #ffffff;
+
+    box-shadow: 0 14px 28px rgba(31, 111, 159, 0.25);
+}
+
+
+/* ========================================
+   LARGE TABLET
+======================================== */
+
+@media (max-width: 1050px) {
+
+    .birthdays {
+        padding: 45px 25px 60px;
+    }
+
+    .birthday-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
 
 @media (max-width: 700px) {
 
     .birthdays {
-        width: 95%;
-        padding: 25px;
+        padding: 40px 20px 50px;
     }
 
-    .birthday-grid {
-        grid-template-columns: 1fr;
+    .birthday-header {
+        margin-bottom: 30px;
     }
 
     .birthday-card {
-        padding: 17px;
+        padding: 18px;
+
+        gap: 15px;
     }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 500px) {
+
+    .birthdays {
+        padding: 30px 15px 45px;
+    }
+
+
+    .birthday-label {
+        font-size: 13px;
+
+        padding: 7px 13px;
+    }
+
+
+    .birthday-header h2 {
+        font-size: 32px;
+    }
+
+
+    .birthday-header p {
+        font-size: 14px;
+    }
+
+
+    /* One card per row */
+
+    .birthday-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .birthday-card {
+        padding: 18px;
+
+        gap: 15px;
+    }
+
 
     .birthday-date {
-        width: 60px;
-        height: 65px;
+        width: 70px;
+
+        min-width: 70px;
+
+        height: 80px;
     }
+
 
     .birthday-date strong {
-        font-size: 24px;
+        font-size: 30px;
     }
 
+
     .birthday-info h3 {
-        font-size: 16px;
+        font-size: 18px;
     }
+
+
+    .birthday-info p {
+        font-size: 13px;
+    }
+
+
+    .birthday-info span {
+        font-size: 12px;
+    }
+
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 350px) {
+
+    .birthdays {
+        padding-left: 10px;
+
+        padding-right: 10px;
+    }
+
+
+    .birthday-header h2 {
+        font-size: 28px;
+    }
+
+
+    .birthday-header p {
+        font-size: 13px;
+    }
+
+
+    .birthday-card {
+        padding: 15px;
+
+        gap: 12px;
+    }
+
+
+    .birthday-date {
+        width: 62px;
+
+        min-width: 62px;
+
+        height: 72px;
+    }
+
+
+    .birthday-date strong {
+        font-size: 27px;
+    }
+
 }
