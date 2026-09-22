@@ -1,0 +1,190 @@
+.birthdays {
+    width: 90%;
+    max-width: 1120px;
+    margin: 50px auto;
+    padding: 35px;
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid #9ed5e8;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 20px rgba(31, 111, 159, 0.12);
+}
+
+
+/* HEADER */
+
+.birthday-header {
+    margin-bottom: 30px;
+}
+
+.birthday-label {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    background: #dff3fa;
+    color: #1f6f9f;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.birthday-header h2 {
+    margin: 12px 0 5px;
+
+    color: #1f6f9f;
+    font-size: 28px;
+}
+
+.birthday-header p {
+    margin: 0;
+
+    color: #527080;
+    font-size: 15px;
+}
+
+
+/* BIRTHDAY GRID */
+
+.birthday-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+/* CARD */
+
+.birthday-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    border: 1px solid #b5dce9;
+    border-radius: 16px;
+
+    box-shadow: 0 5px 15px rgba(31, 111, 159, 0.08);
+
+    transition: 0.3s;
+}
+
+.birthday-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #6db7d2;
+
+    box-shadow: 0 10px 22px rgba(31, 111, 159, 0.18);
+}
+
+
+/* DATE BOX */
+
+.birthday-date {
+    width: 70px;
+    height: 75px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #dff3fa,
+        #b9e4f2
+    );
+
+    border: 1px solid #9ed5e8;
+    border-radius: 14px;
+
+    text-align: center;
+}
+
+.birthday-month {
+    color: #3b91bd;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.birthday-date strong {
+    color: #1f6f9f;
+
+    font-size: 28px;
+    line-height: 1;
+}
+
+
+/* INFO */
+
+.birthday-info {
+    flex: 1;
+}
+
+.birthday-info h3 {
+    margin: 0 0 6px;
+
+    color: #24566e;
+
+    font-size: 18px;
+}
+
+.birthday-info p {
+    margin: 0 0 6px;
+
+    color: #527080;
+
+    font-size: 13px;
+}
+
+.birthday-info span {
+    color: #6b8794;
+
+    font-size: 12px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .birthdays {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .birthday-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .birthday-card {
+        padding: 17px;
+    }
+
+    .birthday-date {
+        width: 60px;
+        height: 65px;
+    }
+
+    .birthday-date strong {
+        font-size: 24px;
+    }
+
+    .birthday-info h3 {
+        font-size: 16px;
+    }
+}

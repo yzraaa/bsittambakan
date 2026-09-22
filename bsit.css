@@ -1,0 +1,391 @@
+/* =========================
+   MAIN PAGE
+========================= */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #e8f7fc 45%,
+        #b9e4f2 100%
+    );
+
+    color: #1e3a4c;
+}
+
+
+/* =========================
+   MAIN TITLE
+========================= */
+
+h1 {
+    text-align: center;
+    color: #1f6f9f;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   OFFICERS SECTION
+========================= */
+
+.officers {
+    width: 90%;
+    max-width: 1120px;
+    margin: 45px auto;
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+
+/* Section title */
+
+.officers h2 {
+    grid-column: 1 / -1;
+
+    color: #1f6f9f;
+    font-size: 25px;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+
+/* Officer cards */
+
+.officers h1 {
+    margin: 0;
+    min-height: 180px;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    border: 1px solid #9ed5e8;
+    border-radius: 18px;
+
+    color: #23495c;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    box-shadow: 0 8px 20px rgba(31, 111, 159, 0.15);
+
+    transition: 0.3s;
+}
+
+
+/* Officer hover */
+
+.officers h1:hover {
+    transform: translateY(-6px);
+
+    background: #ffffff;
+
+    box-shadow: 0 12px 25px rgba(31, 111, 159, 0.25);
+}
+
+
+/* Officer accents */
+
+.officers .pres {
+    border-top: 5px solid #1f6f9f;
+}
+
+.officers .vice {
+    border-top: 5px solid #3b91bd;
+}
+
+.officers .sec {
+    border-top: 5px solid #58a9c9;
+}
+
+.officers .tre {
+    border-top: 5px solid #76bdd5;
+}
+
+.officers .aud {
+    border-top: 5px solid #91cfe0;
+}
+
+
+/* =========================
+   INFORMATION SECTION
+========================= */
+
+.info {
+    width: 90%;
+    max-width: 1120px;
+    margin: 50px auto;
+    padding: 35px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid #9ed5e8;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 20px rgba(31, 111, 159, 0.12);
+}
+
+
+/* Info title */
+
+.info h2 {
+    margin: 0 0 15px;
+
+    color: #1f6f9f;
+
+    font-size: 26px;
+    font-weight: 600;
+}
+
+
+/* Description */
+
+.info-description {
+    color: #527080;
+
+    font-size: 16px;
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   CONTACT CARDS
+========================= */
+
+.contact-card {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* Individual contact */
+
+.contact-item {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    border: 1px solid #b5dce9;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(31, 111, 159, 0.1);
+
+    transition: 0.3s;
+}
+
+
+/* Contact hover */
+
+.contact-item:hover {
+    transform: translateY(-5px);
+
+    background: #ffffff;
+
+    border-color: #6db7d2;
+
+    box-shadow: 0 10px 20px rgba(31, 111, 159, 0.18);
+}
+
+
+/* Icons */
+
+.contact-icon {
+    font-size: 28px;
+
+    color: #1f6f9f;
+}
+
+
+/* Contact heading */
+
+.contact-item h3 {
+    margin: 0 0 5px;
+
+    color: #24566e;
+
+    font-size: 16px;
+}
+
+
+/* Contact information */
+
+.contact-item p {
+    margin: 0;
+
+    color: #6b8794;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+
+    .officers {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .officers {
+        grid-template-columns: 1fr;
+        width: 95%;
+        padding: 15px;
+    }
+
+    .info {
+        width: 95%;
+        padding: 25px;
+    }
+
+}
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 230px;
+    min-height: 100vh;
+
+    position: sticky;
+    top: 0;
+
+    padding: 30px 15px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border-right: 1px solid #9ed5e8;
+
+    box-shadow: 4px 0 15px rgba(31, 111, 159, 0.08);
+}
+
+
+/* Sidebar title */
+
+.sidebar h2 {
+    color: #1f6f9f;
+
+    font-size: 20px;
+
+    margin: 10px 15px 25px;
+
+    letter-spacing: 1px;
+}
+
+
+/* Sidebar links */
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    margin-bottom: 8px;
+
+    text-decoration: none;
+
+    color: #3b6478;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+
+/* Icons */
+
+.sidebar a span {
+    font-size: 20px;
+}
+
+
+/* Hover */
+
+.sidebar a:hover {
+    background: #dff3fa;
+
+    color: #1f6f9f;
+
+    transform: translateX(5px);
+}
+
+
+/* Active-style appearance */
+
+.sidebar a:focus {
+    background: #ccecf6;
+    color: #1f6f9f;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    flex: 1;
+
+    min-width: 0;
+
+    padding-bottom: 50px;
+}

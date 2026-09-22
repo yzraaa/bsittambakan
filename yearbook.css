@@ -1,0 +1,160 @@
+.yearbook {
+    width: 90%;
+    max-width: 1120px;
+    margin: 50px auto;
+    padding: 35px;
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid #9ed5e8;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 20px rgba(31, 111, 159, 0.12);
+}
+
+
+/* HEADER */
+
+.yearbook-header {
+    margin-bottom: 30px;
+}
+
+.yearbook-label {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    background: #dff3fa;
+    color: #1f6f9f;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.yearbook-header h2 {
+    margin: 12px 0 5px;
+
+    color: #1f6f9f;
+    font-size: 28px;
+}
+
+.yearbook-header p {
+    margin: 0;
+
+    color: #527080;
+    font-size: 15px;
+}
+
+
+/* YEARBOOK GRID */
+
+.yearbook-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* CARD */
+
+.yearbook-card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #b5dce9;
+    border-radius: 16px;
+
+    box-shadow: 0 5px 15px rgba(31, 111, 159, 0.08);
+
+    transition: 0.3s;
+}
+
+.yearbook-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #6db7d2;
+
+    box-shadow: 0 12px 25px rgba(31, 111, 159, 0.18);
+}
+
+
+/* PHOTO */
+
+.yearbook-photo {
+    width: 100%;
+    height: 230px;
+
+    overflow: hidden;
+
+    background: #dff3fa;
+}
+
+.yearbook-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.4s;
+}
+
+.yearbook-card:hover .yearbook-photo img {
+    transform: scale(1.05);
+}
+
+
+/* NAME */
+
+.yearbook-info {
+    padding: 17px 18px;
+}
+
+.yearbook-info h3 {
+    margin: 0 0 5px;
+
+    color: #24566e;
+
+    font-size: 18px;
+}
+
+.yearbook-info p {
+    margin: 0;
+
+    color: #6b8794;
+
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .yearbook-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .yearbook {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .yearbook-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .yearbook-photo {
+        height: 260px;
+    }
+}
