@@ -1,160 +1,365 @@
-.yearbook {
-    width: 90%;
-    max-width: 1120px;
-    margin: 50px auto;
-    padding: 35px;
+/* ========================================
+   RESET
+======================================== */
+
+* {
     box-sizing: border-box;
+}
 
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid #9ed5e8;
-    border-radius: 20px;
+html {
+    scroll-behavior: smooth;
+}
 
-    box-shadow: 0 8px 20px rgba(31, 111, 159, 0.12);
+body {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #e8f7fc 45%,
+        #b9e4f2 100%
+    );
+
+    color: #1e3a4c;
+
+    min-height: 100vh;
 }
 
 
-/* HEADER */
+/* ========================================
+   YEARBOOK SECTION
+======================================== */
+
+.yearbook {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 50px 30px 70px;
+}
+
+
+/* ========================================
+   YEARBOOK HEADER
+======================================== */
 
 .yearbook-header {
-    margin-bottom: 30px;
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto 40px;
+
+    text-align: center;
 }
+
+
+/* Small label */
 
 .yearbook-label {
     display: inline-block;
 
-    padding: 6px 12px;
+    padding: 8px 16px;
 
-    background: #dff3fa;
-    color: #1f6f9f;
+    margin-bottom: 12px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid #9ed5e8;
 
     border-radius: 20px;
 
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
+    color: #1f6f9f;
+
+    font-size: 14px;
+
+    font-weight: 600;
 }
+
+
+/* Main title */
 
 .yearbook-header h2 {
-    margin: 12px 0 5px;
+    margin: 0 0 12px;
 
     color: #1f6f9f;
-    font-size: 28px;
+
+    font-size: clamp(32px, 5vw, 48px);
+
+    font-weight: 700;
+
+    line-height: 1.2;
 }
+
+
+/* Description */
 
 .yearbook-header p {
-    margin: 0;
+    margin: 0 auto;
+
+    max-width: 650px;
 
     color: #527080;
-    font-size: 15px;
+
+    font-size: 16px;
+
+    line-height: 1.6;
 }
 
 
-/* YEARBOOK GRID */
+/* ========================================
+   YEARBOOK GRID
+======================================== */
 
 .yearbook-grid {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 
-    gap: 22px;
+    gap: 25px;
 }
 
 
-/* CARD */
+/* ========================================
+   YEARBOOK CARD
+======================================== */
 
 .yearbook-card {
+    width: 100%;
+
+    min-width: 0;
+
     overflow: hidden;
 
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.88);
 
-    border: 1px solid #b5dce9;
-    border-radius: 16px;
+    border: 1px solid #9ed5e8;
 
-    box-shadow: 0 5px 15px rgba(31, 111, 159, 0.08);
+    border-top: 5px solid #58a9c9;
 
-    transition: 0.3s;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 20px rgba(31, 111, 159, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
 }
+
+
+/* Card hover */
 
 .yearbook-card:hover {
     transform: translateY(-7px);
 
-    border-color: #6db7d2;
+    background: #ffffff;
 
-    box-shadow: 0 12px 25px rgba(31, 111, 159, 0.18);
+    box-shadow: 0 14px 28px rgba(31, 111, 159, 0.25);
 }
 
 
-/* PHOTO */
+/* ========================================
+   PHOTO
+======================================== */
 
 .yearbook-photo {
     width: 100%;
-    height: 230px;
+
+    aspect-ratio: 1 / 1;
 
     overflow: hidden;
 
-    background: #dff3fa;
+    background: #e8f7fc;
 }
 
+
+/* Student image */
+
 .yearbook-photo img {
+    display: block;
+
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
 
-    display: block;
-
-    transition: 0.4s;
+    transition: transform 0.4s ease;
 }
+
+
+/* Image hover */
 
 .yearbook-card:hover .yearbook-photo img {
     transform: scale(1.05);
 }
 
 
-/* NAME */
+/* ========================================
+   STUDENT INFORMATION
+======================================== */
 
 .yearbook-info {
-    padding: 17px 18px;
+    padding: 18px 15px 20px;
+
+    text-align: center;
 }
+
+
+/* Student name */
 
 .yearbook-info h3 {
-    margin: 0 0 5px;
+    margin: 0 0 6px;
 
-    color: #24566e;
+    color: #23495c;
 
     font-size: 18px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    overflow-wrap: anywhere;
 }
+
+
+/* Student position */
 
 .yearbook-info p {
     margin: 0;
 
     color: #6b8794;
 
-    font-size: 13px;
+    font-size: 14px;
+
+    line-height: 1.4;
 }
 
 
-/* MOBILE */
+/* ========================================
+   LARGE TABLET / SMALL DESKTOP
+======================================== */
 
-@media (max-width: 900px) {
-
-    .yearbook-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
 
     .yearbook {
-        width: 95%;
-        padding: 25px;
+        padding: 40px 25px 60px;
+    }
+
+    .yearbook-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 750px) {
+
+    .yearbook {
+        padding: 35px 20px 50px;
+    }
+
+    .yearbook-header {
+        margin-bottom: 30px;
+    }
+
+    .yearbook-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+    .yearbook-info {
+        padding: 15px 12px 18px;
+    }
+
+    .yearbook-info h3 {
+        font-size: 17px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 500px) {
+
+    .yearbook {
+        padding: 30px 15px 45px;
+    }
+
+    .yearbook-header {
+        margin-bottom: 25px;
+    }
+
+    .yearbook-label {
+        font-size: 13px;
+
+        padding: 7px 13px;
+    }
+
+    .yearbook-header h2 {
+        font-size: 32px;
+    }
+
+    .yearbook-header p {
+        font-size: 14px;
     }
 
     .yearbook-grid {
         grid-template-columns: 1fr;
+
+        gap: 20px;
     }
 
-    .yearbook-photo {
-        height: 260px;
+    .yearbook-card {
+        max-width: 400px;
+
+        margin: 0 auto;
     }
+
+    .yearbook-info h3 {
+        font-size: 18px;
+    }
+
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 350px) {
+
+    .yearbook {
+        padding-left: 10px;
+
+        padding-right: 10px;
+    }
+
+    .yearbook-header h2 {
+        font-size: 28px;
+    }
+
+    .yearbook-header p {
+        font-size: 13px;
+    }
+
 }
