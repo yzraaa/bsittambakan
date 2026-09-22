@@ -1,187 +1,433 @@
-.announcements {
-    width: 90%;
-    max-width: 1120px;
-    margin: 50px auto;
-    padding: 35px;
+/* ========================================
+   RESET
+======================================== */
+
+* {
     box-sizing: border-box;
-
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid #9ed5e8;
-    border-radius: 20px;
-
-    box-shadow: 0 8px 20px rgba(31, 111, 159, 0.12);
 }
 
-/* HEADER */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #e8f7fc 45%,
+        #b9e4f2 100%
+    );
+
+    color: #1e3a4c;
+
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   ANNOUNCEMENTS SECTION
+======================================== */
+
+.announcements {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 50px 30px 70px;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
 
 .announcement-header {
-    margin-bottom: 25px;
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: 0 auto 40px;
+
+    text-align: center;
 }
+
+
+/* Notice board label */
 
 .announcement-label {
     display: inline-block;
-    padding: 6px 12px;
 
-    background: #dff3fa;
-    color: #1f6f9f;
+    padding: 8px 16px;
+
+    margin-bottom: 12px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid #9ed5e8;
 
     border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.announcement-header h2 {
-    margin: 12px 0 5px;
 
     color: #1f6f9f;
-    font-size: 28px;
+
+    font-size: 14px;
+
+    font-weight: 600;
 }
+
+
+/* Main title */
+
+.announcement-header h2 {
+    margin: 0 0 12px;
+
+    color: #1f6f9f;
+
+    font-size: clamp(32px, 5vw, 48px);
+
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+/* Description */
 
 .announcement-header p {
-    margin: 0;
+    margin: 0 auto;
+
+    max-width: 650px;
+
     color: #527080;
-    font-size: 15px;
+
+    font-size: 16px;
+
+    line-height: 1.6;
 }
 
 
-/* ANNOUNCEMENT LIST */
+/* ========================================
+   ANNOUNCEMENT LIST
+======================================== */
 
 .announcement-list {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
 }
 
 
-/* CARD */
+/* ========================================
+   ANNOUNCEMENT CARD
+======================================== */
 
 .announcement-card {
+    width: 100%;
+
+    min-width: 0;
+
     display: flex;
+
+    align-items: flex-start;
+
     gap: 20px;
 
-    padding: 22px;
+    padding: 25px;
 
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.88);
 
-    border: 1px solid #b5dce9;
-    border-left: 5px solid #76bdd5;
+    border: 1px solid #9ed5e8;
 
-    border-radius: 15px;
+    border-left: 5px solid #58a9c9;
 
-    box-shadow: 0 5px 15px rgba(31, 111, 159, 0.08);
+    border-radius: 18px;
 
-    transition: 0.3s;
-}
+    box-shadow: 0 8px 20px rgba(31, 111, 159, 0.15);
 
-.announcement-card:hover {
-    transform: translateX(5px);
-
-    border-color: #6db7d2;
-
-    box-shadow: 0 8px 20px rgba(31, 111, 159, 0.16);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
 }
 
 
-/* FEATURED */
+/* Featured announcement */
 
 .announcement-card.featured {
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #eaf8fc
-    );
+    grid-column: 1 / -1;
 
     border-left: 5px solid #1f6f9f;
 }
 
 
-/* ICON */
+/* ========================================
+   ICON
+======================================== */
 
 .announcement-icon {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+
+    height: 55px;
 
     flex-shrink: 0;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
-    background: #dff3fa;
+    background: #e8f7fc;
 
-    border-radius: 14px;
+    border: 1px solid #b5dce9;
 
-    font-size: 24px;
+    border-radius: 15px;
+
+    font-size: 28px;
 }
 
 
-/* CONTENT */
+/* ========================================
+   CONTENT
+======================================== */
 
 .announcement-content {
+    min-width: 0;
+
     flex: 1;
 }
+
+
+/* Tag */
 
 .announcement-tag {
     display: inline-block;
 
-    margin-bottom: 6px;
+    padding: 5px 10px;
 
-    color: #3b91bd;
+    margin-bottom: 8px;
+
+    background: #dff3fa;
+
+    border-radius: 10px;
+
+    color: #1f6f9f;
+
     font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 1px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
 }
+
+
+/* Announcement title */
 
 .announcement-content h3 {
-    margin: 0 0 8px;
+    margin: 0 0 10px;
 
-    color: #24566e;
-    font-size: 19px;
+    color: #23495c;
+
+    font-size: 21px;
+
+    line-height: 1.3;
 }
 
+
+/* Announcement description */
+
 .announcement-content p {
-    margin: 0 0 15px;
+    margin: 0 0 18px;
 
     color: #527080;
-    font-size: 14px;
+
+    font-size: 15px;
+
     line-height: 1.6;
 }
 
 
-/* FOOTER */
+/* ========================================
+   FOOTER
+======================================== */
 
 .announcement-footer {
     display: flex;
-    gap: 20px;
+
     flex-wrap: wrap;
 
+    gap: 15px;
+
     color: #6b8794;
-    font-size: 12px;
+
+    font-size: 13px;
+
+    line-height: 1.4;
 }
 
 
-/* MOBILE */
+/* ========================================
+   HOVER
+======================================== */
 
-@media (max-width: 600px) {
+.announcement-card:hover {
+    transform: translateY(-6px);
+
+    background: #ffffff;
+
+    box-shadow: 0 14px 28px rgba(31, 111, 159, 0.25);
+}
+
+
+/* ========================================
+   LARGE TABLET
+======================================== */
+
+@media (max-width: 900px) {
 
     .announcements {
-        width: 95%;
-        padding: 25px;
+        padding: 40px 25px 60px;
+    }
+
+    .announcement-list {
+        grid-template-columns: 1fr;
+    }
+
+    .announcement-card.featured {
+        grid-column: auto;
+    }
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 650px) {
+
+    .announcements {
+        padding: 35px 20px 50px;
+    }
+
+    .announcement-header {
+        margin-bottom: 30px;
     }
 
     .announcement-card {
-        padding: 18px;
-        gap: 12px;
-    }
+        padding: 20px;
 
-    .announcement-icon {
-        width: 42px;
-        height: 42px;
-        font-size: 20px;
+        gap: 15px;
     }
 
     .announcement-content h3 {
-        font-size: 17px;
+        font-size: 19px;
     }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 500px) {
+
+    .announcements {
+        padding: 30px 15px 45px;
+    }
+
+    .announcement-label {
+        font-size: 13px;
+
+        padding: 7px 13px;
+    }
+
+    .announcement-header h2 {
+        font-size: 32px;
+    }
+
+    .announcement-header p {
+        font-size: 14px;
+    }
+
+
+    /* Stack icon above content */
+
+    .announcement-card {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 20px;
+
+        gap: 15px;
+    }
+
+
+    .announcement-icon {
+        width: 50px;
+
+        height: 50px;
+
+        font-size: 24px;
+    }
+
+
+    .announcement-content h3 {
+        font-size: 18px;
+    }
+
+
+    .announcement-content p {
+        font-size: 14px;
+    }
+
+
+    .announcement-footer {
+        flex-direction: column;
+
+        gap: 6px;
+
+        font-size: 12px;
+    }
+
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 350px) {
+
+    .announcements {
+        padding-left: 10px;
+
+        padding-right: 10px;
+    }
+
+    .announcement-header h2 {
+        font-size: 28px;
+    }
+
+    .announcement-header p {
+        font-size: 13px;
+    }
+
+    .announcement-card {
+        padding: 16px;
+    }
+
 }
