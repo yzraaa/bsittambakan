@@ -12,7 +12,6 @@ html {
 
 body {
     margin: 0;
-
     font-family: Arial, Helvetica, sans-serif;
 
     background: linear-gradient(
@@ -23,7 +22,6 @@ body {
     );
 
     color: #1e3a4c;
-
     min-height: 100vh;
 }
 
@@ -34,21 +32,15 @@ body {
 
 .page-header {
     width: 100%;
-
     padding: 35px 20px 20px;
-
     text-align: center;
 }
 
 .page-header h1 {
     margin: 0;
-
     color: #1f6f9f;
-
     font-size: clamp(28px, 4vw, 40px);
-
     font-weight: 700;
-
     line-height: 1.2;
 }
 
@@ -59,9 +51,7 @@ body {
 
 .layout {
     display: flex;
-
     width: 100%;
-
     min-height: calc(100vh - 120px);
 }
 
@@ -72,15 +62,11 @@ body {
 
 .sidebar {
     width: 230px;
-
     flex-shrink: 0;
-
     min-height: 100vh;
 
     position: sticky;
-
     top: 0;
-
     align-self: flex-start;
 
     padding: 30px 15px;
@@ -97,7 +83,6 @@ body {
 
 .sidebar h2 {
     color: #1f6f9f;
-
     font-size: 20px;
 
     margin: 10px 15px 25px;
@@ -110,7 +95,6 @@ body {
 
 .sidebar a {
     display: flex;
-
     align-items: center;
 
     gap: 12px;
@@ -118,7 +102,6 @@ body {
     width: 100%;
 
     padding: 15px;
-
     margin-bottom: 8px;
 
     text-decoration: none;
@@ -126,7 +109,6 @@ body {
     color: #3b6478;
 
     font-size: 15px;
-
     font-weight: 600;
 
     border-radius: 12px;
@@ -139,7 +121,6 @@ body {
 
 .sidebar a span:first-child {
     font-size: 20px;
-
     flex-shrink: 0;
 }
 
@@ -148,7 +129,6 @@ body {
 
 .sidebar a:hover {
     background: #dff3fa;
-
     color: #1f6f9f;
 
     transform: translateX(5px);
@@ -161,7 +141,6 @@ body {
 
 .main-content {
     flex: 1;
-
     min-width: 0;
 
     padding: 20px 30px 60px;
@@ -174,7 +153,6 @@ body {
 
 .officers {
     width: 100%;
-
     max-width: 1120px;
 
     margin: 20px auto 50px;
@@ -197,22 +175,26 @@ body {
     color: #1f6f9f;
 
     font-size: 26px;
-
     font-weight: 600;
 }
 
 
 /* ========================================
-   OFFICER CARD
+   OFFICER CARDS
+   Your HTML uses:
+   <h1 class="pres">
+   <h1 class="vice">
+   <h1 class="sec">
+   <h1 class="tre">
+   <h1 class="aud">
 ======================================== */
 
-.officer-card {
+.officers > h1 {
     width: 100%;
-
     min-width: 0;
-
     min-height: 250px;
 
+    margin: 0;
     padding: 15px;
 
     display: flex;
@@ -235,6 +217,14 @@ body {
 
     box-shadow: 0 8px 20px rgba(31, 111, 159, 0.15);
 
+    color: #23495c;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
@@ -244,11 +234,10 @@ body {
 
 /* Officer image */
 
-.officer-card img {
+.officers > h1 img {
     display: block;
 
     width: 100%;
-
     height: 170px;
 
     object-fit: cover;
@@ -259,37 +248,9 @@ body {
 }
 
 
-/* Officer name/title */
+/* Officer hover */
 
-.officer-card h3 {
-    margin: 0;
-
-    color: #23495c;
-
-    font-size: 17px;
-
-    line-height: 1.3;
-}
-
-
-/* Officer name */
-
-.officer-card p {
-    margin: 3px 0 0;
-
-    color: #23495c;
-
-    font-size: 17px;
-
-    font-weight: 700;
-
-    line-height: 1.3;
-}
-
-
-/* Hover */
-
-.officer-card:hover {
+.officers > h1:hover {
     transform: translateY(-6px);
 
     background: #ffffff;
@@ -298,25 +259,27 @@ body {
 }
 
 
-/* Officer accents */
+/* ========================================
+   OFFICER ACCENTS
+======================================== */
 
-.officer-card.pres {
+.officers > h1.pres {
     border-top: 5px solid #1f6f9f;
 }
 
-.officer-card.vice {
+.officers > h1.vice {
     border-top: 5px solid #3b91bd;
 }
 
-.officer-card.sec {
+.officers > h1.sec {
     border-top: 5px solid #58a9c9;
 }
 
-.officer-card.tre {
+.officers > h1.tre {
     border-top: 5px solid #76bdd5;
 }
 
-.officer-card.aud {
+.officers > h1.aud {
     border-top: 5px solid #91cfe0;
 }
 
@@ -327,7 +290,6 @@ body {
 
 .info {
     width: 100%;
-
     max-width: 1120px;
 
     margin: 0 auto;
@@ -425,13 +387,31 @@ body {
 
 .contact-icon {
     font-size: 28px;
-
     flex-shrink: 0;
+}
+
+
+/* Facebook / contact link */
+
+.contact-item a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    width: 100%;
+    height: 100%;
+
+    color: inherit;
+
+    text-decoration: none;
 }
 
 
 /* Contact heading */
 
+.contact-item a h3,
 .contact-item h3 {
     margin: 0 0 5px;
 
@@ -443,7 +423,8 @@ body {
 
 /* Contact text */
 
-.contact-item p {
+.contact-item p,
+.contact-item a p {
     margin: 0;
 
     color: #6b8794;
@@ -462,7 +443,6 @@ body {
 
     .main-content {
         padding-left: 20px;
-
         padding-right: 20px;
     }
 
@@ -473,7 +453,6 @@ body {
     .contact-card {
         grid-template-columns: 1fr;
     }
-
 }
 
 
@@ -503,7 +482,8 @@ body {
 
         border-bottom: 1px solid #9ed5e8;
 
-        box-shadow: 0 4px 15px rgba(31, 111, 159, 0.08);
+        box-shadow:
+            0 4px 15px rgba(31, 111, 159, 0.08);
     }
 
 
@@ -531,7 +511,6 @@ body {
     .officers {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
 }
 
 
@@ -582,6 +561,8 @@ body {
     }
 
 
+    /* Officers */
+
     .officers {
         grid-template-columns: 1fr;
 
@@ -596,21 +577,19 @@ body {
     }
 
 
-    .officer-card {
+    .officers > h1 {
         min-height: 0;
 
         padding: 15px;
+
+        max-width: 350px;
+
+        margin: 0 auto;
     }
 
 
-    .officer-card img {
+    .officers > h1 img {
         height: 220px;
-    }
-
-
-    .officer-card h3,
-    .officer-card p {
-        font-size: 18px;
     }
 
 
@@ -641,7 +620,6 @@ body {
     .contact-item {
         padding: 15px;
     }
-
 }
 
 
@@ -663,7 +641,7 @@ body {
     }
 
 
-    .officer-card img {
+    .officers > h1 img {
         height: 200px;
     }
 
@@ -671,5 +649,4 @@ body {
     .info {
         padding: 20px 15px;
     }
-
 }
